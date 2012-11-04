@@ -1,0 +1,8 @@
+FIND_PACKAGE(OpenCV REQUIRED)
+#uncomment on ubuntu 8.04
+#FIND_PACKAGE(OpenCV REQUIRED)
+INCLUDE_DIRECTORIES(${OPENCV_INCLUDE_DIR})
+
+ADD_EXECUTABLE(wamhandeye wamHandeye.cpp ImageHandler.cpp ImageHandler.h)
+TARGET_LINK_LIBRARIES(wamhandeye cwamdriver  ${IRIUTILS_LIBRARIES} ${IRIUTILS_LIBRARY} ${comm_LIBRARY} ${comm_LIBRARIES} ${OPENCV_LIBRARIES} ${OpenCV_LIBS})
+
